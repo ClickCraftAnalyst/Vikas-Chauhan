@@ -5,1053 +5,443 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vikas Chauhan — Digital Marketing Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #0a0a0f;
-    --ink2: #1a1a2e;
-    --cream: #f5f0e8;
-    --cream2: #ede7d9;
-    --blue: #1a4fd6;
-    --blue-bright: #2563ff;
-    --orange: #f97316;
-    --orange-soft: #fed7aa;
-    --glass: rgba(255,255,255,0.06);
-    --border: rgba(255,255,255,0.10);
-  }
+:root{--ink:#09090f;--ink2:#111118;--cream:#f2ede4;--cream2:#c8c2b6;--blue:#1a4fd6;--blueB:#2563ff;--ora:#f97316;--oraS:#fed7aa;--glass:rgba(255,255,255,0.055);--bdr:rgba(255,255,255,0.09)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden;cursor:none}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#cur{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:difference}
+#cur-dot{position:absolute;width:8px;height:8px;background:#fff;border-radius:50%;transform:translate(-50%,-50%)}
+#cur-ring{position:absolute;width:38px;height:38px;border:1.5px solid rgba(255,255,255,.45);border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s}
 
-  html { scroll-behavior: smooth; }
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.3rem 3rem;background:rgba(9,9,15,.65);backdrop-filter:blur(24px);border-bottom:1px solid var(--bdr)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:.08em;color:var(--cream);text-decoration:none}
+.nav-logo span{color:var(--ora)}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.5);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--cream)}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--ink);
-    color: var(--cream);
-    overflow-x: hidden;
-    cursor: none;
-  }
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden;gap:3rem}
+.blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.15;animation:drift 14s ease-in-out infinite;pointer-events:none}
+.b1{width:620px;height:620px;background:var(--blue);top:-8%;right:4%}
+.b2{width:420px;height:420px;background:var(--ora);bottom:0;right:28%;animation-delay:-5s}
+.b3{width:300px;height:300px;background:#7c3aed;bottom:20%;left:5%;animation-delay:-9s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-25px) scale(1.04)}66%{transform:translate(-15px,18px) scale(.97)}}
+.grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");opacity:.5}
 
-  /* CUSTOM CURSOR */
-  .cursor {
-    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
-    mix-blend-mode: difference;
-  }
-  .cursor-dot {
-    width: 8px; height: 8px; background: #fff; border-radius: 50%;
-    transform: translate(-50%,-50%);
-    transition: transform 0.1s;
-  }
-  .cursor-ring {
-    width: 36px; height: 36px; border: 1.5px solid rgba(255,255,255,0.5);
-    border-radius: 50%; transform: translate(-50%,-50%);
-    transition: all 0.18s ease;
-    position: absolute; top: 0; left: 0;
-  }
-  body:hover .cursor-ring { opacity: 1; }
+.hero-l{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:.55rem;background:var(--glass);border:1px solid var(--bdr);border-radius:100px;padding:.38rem 1rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.55);margin-bottom:1.8rem;animation:fu .7s ease both}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--ora);animation:glow 2s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,5.8vw,5.2rem);font-weight:800;line-height:1.0;letter-spacing:-.025em;animation:fu .7s .1s ease both}
+h1 em{font-style:normal;color:var(--ora)}
+.hero-sub{margin-top:1.4rem;font-size:1rem;color:rgba(242,237,228,.52);line-height:1.75;max-width:460px;font-weight:300;animation:fu .7s .2s ease both}
+.cta-row{margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;animation:fu .7s .3s ease both}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 1.9rem;border-radius:100px;font-size:.83rem;font-weight:500;letter-spacing:.04em;text-decoration:none;border:none;cursor:none;transition:all .22s ease}
+.btn-p{background:var(--ora);color:#fff}
+.btn-p:hover{background:#ea6b04;transform:translateY(-2px);box-shadow:0 12px 30px rgba(249,115,22,.28)}
+.btn-o{background:transparent;border:1px solid rgba(242,237,228,.18);color:var(--cream)}
+.btn-o:hover{border-color:var(--cream);transform:translateY(-2px)}
+.hero-r{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-end;gap:1.1rem;animation:fu .7s .35s ease both}
+.sc{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;padding:1.5rem 1.9rem;backdrop-filter:blur(18px);width:255px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.sc:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ora),var(--blueB))}
+.sc-num{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;line-height:1;color:var(--cream)}
+.sc-lbl{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(242,237,228,.4);margin-top:.35rem}
+.sc-brand{font-size:.68rem;color:var(--ora);margin-top:.3rem;font-weight:500}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.4rem 3rem;
-    background: rgba(10,10,15,0.6);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem; font-weight: 800;
-    letter-spacing: 0.08em; color: var(--cream);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--orange); }
-  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,240,232,0.55); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--cream); }
+section{padding:6rem 3rem}
+.slbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ora);font-weight:600;margin-bottom:.7rem;display:flex;align-items:center;gap:.6rem}
+.slbl::before{content:'';display:block;width:22px;height:1px;background:var(--ora)}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:.9rem}
+.sdesc{color:rgba(242,237,228,.48);font-size:.97rem;font-weight:300;max-width:510px;line-height:1.8;margin-bottom:3rem}
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 3rem 4rem;
-    position: relative; overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0; pointer-events: none;
-  }
-  .hero-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.18;
-    animation: drift 12s ease-in-out infinite;
-  }
-  .hero-blob-1 {
-    width: 600px; height: 600px;
-    background: var(--blue);
-    top: -10%; right: 5%;
-    animation-delay: 0s;
-  }
-  .hero-blob-2 {
-    width: 400px; height: 400px;
-    background: var(--orange);
-    bottom: 0; right: 25%;
-    animation-delay: -4s;
-  }
-  @keyframes drift {
-    0%,100% { transform: translate(0,0) scale(1); }
-    33% { transform: translate(40px,-30px) scale(1.05); }
-    66% { transform: translate(-20px,20px) scale(0.97); }
-  }
+/* METRICS */
+.sec-metrics{background:var(--ink2);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:0}
+.mg{display:grid;grid-template-columns:repeat(6,1fr)}
+.mi{padding:2.4rem 1.8rem;border-right:1px solid var(--bdr);transition:background .2s}
+.mi:last-child{border-right:none}
+.mi:hover{background:var(--glass)}
+.mi-val{font-family:'Syne',sans-serif;font-size:2.7rem;font-weight:800;background:linear-gradient(135deg,var(--cream),var(--oraS));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.mi-sub{font-size:.72rem;color:rgba(242,237,228,.38);margin-top:.45rem;letter-spacing:.03em;line-height:1.5}
+.mi-g{font-size:.68rem;font-weight:500;margin-top:.6rem;color:#4ade80}
 
-  /* Noise grain overlay */
-  .hero-bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    opacity: 0.4;
-  }
+/* WORK */
+.sec-work{background:var(--ink)}
+.wg{display:grid;gap:1.2rem}
+.wc{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;padding:1.9rem 2.2rem;display:grid;grid-template-columns:1fr auto;gap:.8rem;position:relative;overflow:hidden;transition:all .25s}
+.wc:hover{border-color:rgba(255,255,255,.18);transform:translateY(-3px);background:rgba(255,255,255,.07)}
+.wc-acc{position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--ora),var(--blueB));border-radius:3px 0 0 3px}
+.wc-role{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--cream)}
+.wc-co{font-size:.82rem;color:var(--ora);font-weight:500;margin-top:.18rem}
+.wc-co a{color:var(--ora);text-decoration:none}
+.wc-co a:hover{text-decoration:underline}
+.wc-yr{font-size:.72rem;color:rgba(242,237,228,.32);letter-spacing:.05em;white-space:nowrap;align-self:start}
+.wc-desc{font-size:.85rem;color:rgba(242,237,228,.52);margin-top:.8rem;line-height:1.75;font-weight:300;grid-column:1/-1}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem;grid-column:1/-1}
+.tag{font-size:.67rem;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .8rem;border-radius:100px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.22);color:var(--ora)}
 
-  .hero-left { position: relative; z-index: 1; }
+/* FIGMA DESIGNS */
+.sec-design{background:var(--ink2)}
+.ftabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.ftab{padding:.55rem 1.4rem;border-radius:100px;font-size:.78rem;font-weight:500;letter-spacing:.04em;border:1px solid var(--bdr);background:transparent;color:rgba(242,237,228,.45);cursor:none;transition:all .2s}
+.ftab.active,.ftab:hover{background:var(--ora);color:#fff;border-color:var(--ora)}
+.figma-wrap{width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--bdr);background:var(--ink);position:relative}
+.figma-wrap iframe{width:100%;height:620px;border:none;display:block}
+.figma-badge{position:absolute;top:.9rem;left:.9rem;background:rgba(9,9,15,.85);backdrop-filter:blur(10px);border:1px solid var(--bdr);border-radius:100px;padding:.3rem .9rem;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,228,.45);pointer-events:none;z-index:5}
+.fi-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--ink);z-index:4;transition:opacity .6s}
+.fi-load.gone{opacity:0;pointer-events:none}
+.fi-load-txt{font-size:.78rem;color:rgba(242,237,228,.3);letter-spacing:.1em;text-transform:uppercase}
 
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,240,232,0.6);
-    margin-bottom: 2rem;
-    animation: fadeUp 0.8s ease both;
-  }
-  .hero-tag-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--orange);
-    animation: pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%,100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
-  }
+/* REPORTS */
+.sec-reports{background:var(--ink)}
+.rg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.rc{border-radius:20px;border:1px solid var(--bdr);background:var(--glass);padding:2rem 2.2rem;transition:all .25s;position:relative;overflow:hidden}
+.rc:hover{border-color:rgba(255,255,255,.2);transform:translateY(-3px)}
+.rc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ora),var(--blueB))}
+.rc-mo{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ora);font-weight:600;margin-bottom:.5rem}
+.rc-name{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;line-height:1.25;color:var(--cream)}
+.rm{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.4rem}
+.rm-item{background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem 1rem}
+.rm-val{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--cream)}
+.rm-key{font-size:.65rem;color:rgba(242,237,228,.38);text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem}
+.rdl{display:flex;flex-direction:column;gap:.38rem;margin-top:1.4rem}
+.rdl li{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:rgba(242,237,228,.48);list-style:none}
+.rdl li::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--ora);flex-shrink:0}
 
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(3.2rem, 6vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-  h1 .line2 { color: var(--orange); }
+/* LIVE SITE */
+.sec-live{background:var(--ink2);padding:4rem 3rem}
+.live-card{border:1px solid var(--bdr);border-radius:20px;overflow:hidden}
+.live-top{padding:1.8rem 2.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-bottom:1px solid var(--bdr);background:var(--glass)}
+.live-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--cream)}
+.live-sub{font-size:.8rem;color:rgba(242,237,228,.4);margin-top:.2rem}
+.live-pill{display:inline-block;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.25);color:#4ade80;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .65rem;border-radius:100px;margin-left:.5rem;vertical-align:middle}
+.live-card iframe{width:100%;height:540px;border:none;display:block;background:#fff}
+.live-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.62rem 1.4rem;border-radius:100px;font-size:.76rem;font-weight:500;background:transparent;border:1px solid var(--bdr);color:var(--cream);text-decoration:none;transition:all .2s;cursor:none}
+.live-btn:hover{background:var(--ora);border-color:var(--ora);transform:translateY(-2px)}
 
-  .hero-sub {
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    color: rgba(245,240,232,0.55);
-    line-height: 1.7;
-    max-width: 480px;
-    font-weight: 300;
-    animation: fadeUp 0.8s 0.2s ease both;
-  }
+/* SKILLS */
+.sec-skills{background:var(--ink)}
+.skgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.9rem}
+.sk{background:var(--glass);border:1px solid var(--bdr);border-radius:12px;padding:.95rem 1.1rem;text-align:center;font-size:.8rem;font-weight:500;color:var(--cream);transition:all .2s}
+.sk:hover{border-color:var(--ora);background:rgba(249,115,22,.08);transform:translateY(-2px)}
+.certs{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+.cert{display:flex;align-items:center;gap:.5rem;background:var(--glass);border:1px solid var(--bdr);border-radius:100px;padding:.5rem 1.1rem;font-size:.74rem;color:rgba(242,237,228,.55);transition:all .2s}
+.cert:hover{border-color:var(--ora);color:var(--cream)}
 
-  .hero-cta {
-    margin-top: 2.5rem;
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeUp 0.8s 0.3s ease both;
-  }
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    border-radius: 100px;
-    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
-    text-decoration: none; border: none; cursor: none;
-    transition: all 0.22s ease;
-  }
-  .btn-primary {
-    background: var(--orange);
-    color: #fff;
-  }
-  .btn-primary:hover { background: #ea6a05; transform: translateY(-2px); }
-  .btn-outline {
-    background: transparent;
-    border: 1px solid rgba(245,240,232,0.2);
-    color: var(--cream);
-  }
-  .btn-outline:hover { border-color: var(--cream); transform: translateY(-2px); }
+/* CONTACT */
+.sec-contact{background:var(--ink2);text-align:center;padding:6rem 3rem}
+.cw{max-width:560px;margin:0 auto}
+.c-email{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;color:var(--cream);text-decoration:none;border-bottom:2px solid var(--ora);padding-bottom:.3rem;transition:color .2s}
+.c-email:hover{color:var(--ora)}
+.c-links{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-top:2rem}
 
-  /* HERO STATS */
-  .hero-right {
-    position: relative; z-index: 1;
-    display: flex; flex-direction: column; align-items: flex-end; gap: 1.2rem;
-    animation: fadeUp 0.8s 0.4s ease both;
-  }
+footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.flogo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.06em}
+.flogo span{color:var(--ora)}
+footer ul{display:flex;gap:1.5rem;list-style:none}
+footer a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(242,237,228,.3);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--ora)}
+.fcopy{font-size:.72rem;color:rgba(242,237,228,.18)}
 
-  .stat-card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 1.6rem 2rem;
-    backdrop-filter: blur(20px);
-    width: 260px;
-    position: relative; overflow: hidden;
-    transition: transform 0.25s, border-color 0.25s;
-  }
-  .stat-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2); }
-  .stat-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--orange), var(--blue-bright));
-  }
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.8rem; font-weight: 800;
-    color: var(--cream); line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-    color: rgba(245,240,232,0.45); margin-top: 0.4rem;
-  }
-  .stat-brand {
-    font-size: 0.72rem; color: var(--orange);
-    margin-top: 0.3rem; font-weight: 500;
-  }
+.rv{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease}
+.rv.on{opacity:1;transform:translateY(0)}
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* SECTION STRUCTURE */
-  section { padding: 6rem 3rem; }
-  .section-label {
-    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--orange); font-weight: 500; margin-bottom: 0.8rem;
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .section-label::before {
-    content: ''; display: block;
-    width: 24px; height: 1px; background: var(--orange);
-  }
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800; line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-  }
-  .section-desc {
-    color: rgba(245,240,232,0.5);
-    font-size: 1rem; font-weight: 300;
-    max-width: 520px; line-height: 1.8;
-    margin-bottom: 3rem;
-  }
-
-  /* METRICS */
-  .metrics-section {
-    background: var(--ink2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0;
-  }
-  .metric-item {
-    padding: 2.5rem 2rem;
-    border-right: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    transition: background 0.25s;
-  }
-  .metric-item:last-child { border-right: none; }
-  .metric-item:hover { background: var(--glass); }
-  .metric-item::after {
-    content: attr(data-label);
-    position: absolute; bottom: 1rem; right: 1.2rem;
-    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
-    color: rgba(245,240,232,0.2);
-  }
-  .metric-val {
-    font-family: 'Syne', sans-serif;
-    font-size: 3rem; font-weight: 800;
-    background: linear-gradient(135deg, var(--cream), var(--orange-soft));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-  }
-  .metric-sub {
-    font-size: 0.8rem; color: rgba(245,240,232,0.4);
-    margin-top: 0.5rem; letter-spacing: 0.05em;
-  }
-  .metric-growth {
-    display: inline-flex; align-items: center; gap: 0.3rem;
-    margin-top: 0.8rem;
-    font-size: 0.72rem; font-weight: 500;
-    color: #4ade80; /* green for growth */
-  }
-  .metric-growth.down { color: #fb923c; }
-
-  /* WORK / EXPERIENCE */
-  .work-section { background: var(--ink); }
-  .work-grid {
-    display: grid; gap: 1.5rem;
-  }
-  .work-card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2rem 2.4rem;
-    display: grid; grid-template-columns: 1fr auto;
-    gap: 1rem;
-    transition: all 0.25s ease;
-    position: relative; overflow: hidden;
-  }
-  .work-card:hover {
-    border-color: rgba(255,255,255,0.18);
-    transform: translateY(-3px);
-    background: rgba(255,255,255,0.07);
-  }
-  .work-card-accent {
-    position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
-    background: linear-gradient(to bottom, var(--orange), var(--blue-bright));
-    border-radius: 3px 0 0 3px;
-  }
-  .work-role {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem; font-weight: 700; color: var(--cream);
-  }
-  .work-company {
-    font-size: 0.85rem; color: var(--orange);
-    font-weight: 500; margin-top: 0.2rem;
-  }
-  .work-period {
-    font-size: 0.75rem; color: rgba(245,240,232,0.35);
-    letter-spacing: 0.05em; white-space: nowrap;
-    align-self: start;
-  }
-  .work-desc {
-    font-size: 0.88rem; color: rgba(245,240,232,0.55);
-    margin-top: 0.9rem; line-height: 1.7; font-weight: 300;
-    grid-column: 1 / -1;
-  }
-  .work-tags {
-    display: flex; flex-wrap: wrap; gap: 0.5rem;
-    margin-top: 1rem; grid-column: 1 / -1;
-  }
-  .tag {
-    font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
-    padding: 0.3rem 0.85rem; border-radius: 100px;
-    background: rgba(249,115,22,0.12);
-    border: 1px solid rgba(249,115,22,0.25);
-    color: var(--orange);
-  }
-
-  /* FIGMA / DESIGN WORK */
-  .design-section { background: var(--ink2); }
-  .design-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
-  }
-  .design-card {
-    border-radius: 16px; overflow: hidden;
-    border: 1px solid var(--border);
-    aspect-ratio: 16/10;
-    position: relative;
-    background: var(--glass);
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.25s;
-    cursor: none;
-  }
-  .design-card:hover { border-color: rgba(255,255,255,0.25); transform: scale(1.02); }
-  .design-card-inner {
-    text-align: center; padding: 1.5rem;
-  }
-  .design-placeholder {
-    width: 100%; height: 100%;
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.6rem;
-  }
-  .design-placeholder-icon {
-    font-size: 2rem; opacity: 0.3;
-  }
-  .design-placeholder-text {
-    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(245,240,232,0.25);
-  }
-  .design-placeholder-sub {
-    font-size: 0.65rem; color: rgba(245,240,232,0.15);
-    margin-top: 0.2rem;
-  }
-
-  /* FIGMA placeholder grid designs */
-  .dc-1 { background: linear-gradient(135deg, #1a2a4a 0%, #0d1520 100%); }
-  .dc-2 { background: linear-gradient(135deg, #2a1a0a 0%, #1a0d00 100%); }
-  .dc-3 { background: linear-gradient(135deg, #1a0a2a 0%, #0d0015 100%); }
-  .dc-4 { background: linear-gradient(135deg, #0a2a1a 0%, #001510 100%); }
-  .dc-5 { background: linear-gradient(135deg, #2a1a1a 0%, #150a0a 100%); }
-  .dc-6 { background: linear-gradient(135deg, #1a2a1a 0%, #0a150a 100%); }
-
-  /* FIGMA IFRAME section */
-  .figma-section {
-    background: var(--ink);
-    padding-bottom: 2rem;
-  }
-  .figma-frame {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--ink2);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .figma-placeholder {
-    text-align: center;
-  }
-  .figma-placeholder-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.4rem; font-weight: 700;
-    color: rgba(245,240,232,0.25);
-    margin-top: 1rem;
-  }
-  .figma-placeholder-sub {
-    font-size: 0.85rem; color: rgba(245,240,232,0.15);
-    margin-top: 0.4rem;
-  }
-  .figma-icon {
-    font-size: 4rem; opacity: 0.15;
-  }
-  .figma-note {
-    text-align: center;
-    font-size: 0.75rem; color: rgba(245,240,232,0.25);
-    margin-top: 1rem; letter-spacing: 0.08em;
-  }
-  /* EDIT ZONE — easy to swap iframe */
-  /* To add your Figma embed later, replace the .figma-frame div with:
-     <iframe src="YOUR_FIGMA_EMBED_URL" class="figma-frame" frameborder="0"></iframe> */
-
-  /* REPORTS / CASE STUDY */
-  .reports-section { background: var(--ink2); }
-  .reports-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-  }
-  .report-card {
-    border-radius: 20px; border: 1px solid var(--border);
-    background: var(--glass);
-    padding: 2rem 2.2rem;
-    transition: all 0.25s;
-    position: relative; overflow: hidden;
-  }
-  .report-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
-  .report-card-month {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--orange); margin-bottom: 0.6rem;
-  }
-  .report-card-client {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem; font-weight: 700;
-    color: var(--cream); line-height: 1.2;
-  }
-  .report-metrics {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;
-    margin-top: 1.5rem;
-  }
-  .report-metric {
-    background: rgba(255,255,255,0.04);
-    border-radius: 10px; padding: 0.9rem 1rem;
-  }
-  .report-metric-val {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.4rem; font-weight: 800; color: var(--cream);
-  }
-  .report-metric-key {
-    font-size: 0.7rem; color: rgba(245,240,232,0.4);
-    text-transform: uppercase; letter-spacing: 0.06em;
-    margin-top: 0.2rem;
-  }
-  .report-deliverables {
-    margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem;
-  }
-  .report-deliverable {
-    display: flex; align-items: center; gap: 0.6rem;
-    font-size: 0.82rem; color: rgba(245,240,232,0.5);
-  }
-  .report-deliverable::before {
-    content: ''; display: block; width: 4px; height: 4px;
-    border-radius: 50%; background: var(--orange); flex-shrink: 0;
-  }
-
-  /* SKILLS */
-  .skills-section { background: var(--ink); }
-  .skills-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem;
-  }
-  .skill-pill {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 12px; padding: 1rem 1.2rem;
-    transition: all 0.2s;
-    text-align: center;
-  }
-  .skill-pill:hover {
-    border-color: var(--orange);
-    background: rgba(249,115,22,0.08);
-    transform: translateY(-2px);
-  }
-  .skill-pill-name {
-    font-size: 0.82rem; font-weight: 500; color: var(--cream);
-  }
-
-  /* CERT */
-  .cert-row {
-    display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem;
-  }
-  .cert-badge {
-    display: flex; align-items: center; gap: 0.6rem;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 100px; padding: 0.55rem 1.2rem;
-    font-size: 0.78rem; color: rgba(245,240,232,0.6);
-    transition: all 0.2s;
-  }
-  .cert-badge:hover { border-color: var(--orange); color: var(--cream); }
-  .cert-icon { font-size: 1rem; }
-
-  /* FOOTER */
-  footer {
-    background: var(--ink2);
-    border-top: 1px solid var(--border);
-    padding: 3rem 3rem;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem; font-weight: 800;
-    letter-spacing: 0.06em;
-  }
-  .footer-name span { color: var(--orange); }
-  .footer-links {
-    display: flex; gap: 1.5rem; list-style: none;
-  }
-  .footer-links a {
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-    color: rgba(245,240,232,0.35); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--orange); }
-  .footer-copy {
-    font-size: 0.75rem; color: rgba(245,240,232,0.2);
-  }
-
-  /* SCROLL ANIMATIONS */
-  .reveal {
-    opacity: 0; transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
-    .hero-right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
-    .stat-card { width: 200px; }
-    section { padding: 4rem 1.5rem; }
-    .design-grid { grid-template-columns: repeat(2, 1fr); }
-    .reports-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; align-items: flex-start; }
-    body { cursor: auto; }
-    .cursor { display: none; }
-  }
-  @media (max-width: 600px) {
-    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    .metric-item { border-right: none; border-bottom: 1px solid var(--border); }
-    .design-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-  }
+@media(max-width:1100px){.mg{grid-template-columns:repeat(3,1fr)}.mi{border-bottom:1px solid var(--bdr);border-right:none}.mi:nth-child(3){border-right:none}.mi:nth-child(odd){border-right:1px solid var(--bdr)}}
+@media(max-width:860px){nav{padding:1rem 1.5rem}nav ul{display:none}.hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;gap:2.5rem}.hero-r{align-items:flex-start;flex-direction:row;flex-wrap:wrap}.sc{width:calc(50% - .55rem)}section{padding:4rem 1.5rem}.rg{grid-template-columns:1fr}.sec-live{padding:4rem 1.5rem}body{cursor:auto}#cur{display:none}}
+@media(max-width:540px){.mg{grid-template-columns:1fr 1fr}.sc{width:100%}.figma-wrap iframe{height:420px}.live-card iframe{height:360px}}
 </style>
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor">
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-</div>
+<div id="cur"><div id="cur-dot"></div><div id="cur-ring"></div></div>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">VC<span>.</span></a>
-  <ul class="nav-links">
+  <ul>
     <li><a href="#metrics">Results</a></li>
     <li><a href="#work">Experience</a></li>
-    <li><a href="#designs">Design Work</a></li>
-    <li><a href="#reports">Case Studies</a></li>
-    <li><a href="#skills">Skills</a></li>
+    <li><a href="#designs">Designs</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#live">Live Work</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <div class="hero-blob hero-blob-1"></div>
-    <div class="hero-blob hero-blob-2"></div>
-  </div>
-
-  <div class="hero-left">
-    <div class="hero-tag">
-      <div class="hero-tag-dot"></div>
-      Available for Opportunities
-    </div>
-    <h1>
-      Vikas<br>
-      <span class="line2">Chauhan</span>
-    </h1>
-    <p class="hero-sub">
-      Digital Marketing &amp; Social Media Manager with 4+ years scaling brand presence across education, eCommerce &amp; service industries — driving millions in reach, month after month.
-    </p>
-    <div class="hero-cta">
-      <a href="mailto:vc13377@gmail.com" class="btn btn-primary">Get in Touch →</a>
-      <a href="#reports" class="btn btn-outline">View Case Studies</a>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grain"></div>
+  <div class="hero-l">
+    <div class="pill"><div class="pill-dot"></div>Open to Opportunities · Jaipur, Rajasthan</div>
+    <h1>Vikas<br><em>Chauhan</em></h1>
+    <p class="hero-sub">Digital Marketing &amp; Social Media Manager with 4+ years scaling brands across education, eCommerce &amp; services — driving millions in reach and measurable lead generation, month after month.</p>
+    <div class="cta-row">
+      <a href="mailto:vc13377@gmail.com" class="btn btn-p">Get in Touch →</a>
+      <a href="https://www.linkedin.com/in/vikaschauhanv9" target="_blank" class="btn btn-o">LinkedIn ↗</a>
     </div>
   </div>
+  <div class="hero-r">
+    <div class="sc"><div class="sc-num">2M+</div><div class="sc-lbl">Instagram Reach / Month</div><div class="sc-brand">Pavna Group · Mar 2026</div></div>
+    <div class="sc"><div class="sc-num">4.7M</div><div class="sc-lbl">Facebook Views / Month</div><div class="sc-brand">Pavna Group · Mar 2026</div></div>
+    <div class="sc"><div class="sc-num">14+</div><div class="sc-lbl">Branches Managed</div><div class="sc-brand">Junior Toes Preschool</div></div>
+  </div>
+</section>
 
-  <div class="hero-right">
-    <div class="stat-card">
-      <div class="stat-num">2M+</div>
-      <div class="stat-label">Instagram Reach / Month</div>
-      <div class="stat-brand">Pavna Group · March 2026</div>
+<!-- METRICS -->
+<div class="sec-metrics" id="metrics">
+  <div class="mg rv" id="mg">
+    <div class="mi"><div class="mi-val" id="mv0">1.5M</div><div class="mi-sub">Facebook Views<br>BKG Feb 2026</div><div class="mi-g">↑ 92.3% growth</div></div>
+    <div class="mi"><div class="mi-val" id="mv1">501K</div><div class="mi-sub">Instagram Reach<br>BKG Feb 2026</div><div class="mi-g">↑ 52.9% growth</div></div>
+    <div class="mi"><div class="mi-val" id="mv2">193K</div><div class="mi-sub">YouTube Views<br>BKG Feb 2026</div><div class="mi-g">↑ 188K above avg</div></div>
+    <div class="mi"><div class="mi-val" id="mv3">4.7M</div><div class="mi-sub">Facebook Views<br>Pavna Mar 2026</div><div class="mi-g">Video-first strategy</div></div>
+    <div class="mi"><div class="mi-val" id="mv4">10.8K</div><div class="mi-sub">FB Link Clicks<br>Pavna Mar 2026</div><div class="mi-g">Admission driven</div></div>
+    <div class="mi"><div class="mi-val" id="mv5">25+</div><div class="mi-sub">Clients Managed<br>Career total</div><div class="mi-g">Multi-industry</div></div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="sec-work" id="work">
+  <div class="slbl">Career</div>
+  <h2>Work Experience</h2>
+  <p class="sdesc">4+ years leading performance marketing, creative direction and brand operations across diverse industries.</p>
+  <div class="wg rv">
+    <div class="wc">
+      <div class="wc-acc"></div>
+      <div><div class="wc-role">Social Media Manager</div><div class="wc-co">Mediagarh</div></div>
+      <div class="wc-yr">2025 – Present</div>
+      <p class="wc-desc">End-to-end strategy for 6 brands — Pavna International School, Pavna CBSE, Pavna Group, BKG Global School &amp; PU College, Junior Toes Preschool (14 branches). Delivered 2M+ Instagram reach and 4.7M+ Facebook views in March 2026, 10K+ monthly link clicks. Managed content calendars, 3 on-ground shoot days/month, 13 reels, 15 static creatives, AI landing page visuals, and 4 website pages (Figma → Dev).</p>
+      <div class="tags"><span class="tag">Multi-Brand</span><span class="tag">Reels Strategy</span><span class="tag">Content Production</span><span class="tag">Shoot Direction</span><span class="tag">UI/UX</span><span class="tag">AI Visuals</span></div>
     </div>
-    <div class="stat-card">
-      <div class="stat-num">4.7M</div>
-      <div class="stat-label">Facebook Views / Month</div>
-      <div class="stat-brand">Pavna Group · March 2026</div>
+    <div class="wc">
+      <div class="wc-acc"></div>
+      <div><div class="wc-role">Operational Head – Digital Marketing</div><div class="wc-co"><a href="https://thejwcompany.com" target="_blank">The JW Company ↗</a></div></div>
+      <div class="wc-yr">May 2025 – Present</div>
+      <p class="wc-desc">Leading digital marketing operations, performance campaigns, and creative strategy. Managing website optimization, conversion funnel performance, Meta &amp; Google Ads for high ROAS, influencer collaborations, and brand positioning.</p>
+      <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Google Ads</span><span class="tag">ROAS</span><span class="tag">Influencer Marketing</span><span class="tag">Funnel Optimization</span></div>
     </div>
-    <div class="stat-card">
-      <div class="stat-num">14+</div>
-      <div class="stat-label">Branches Managed</div>
-      <div class="stat-brand">Junior Toes Preschool</div>
+    <div class="wc">
+      <div class="wc-acc"></div>
+      <div><div class="wc-role">Operational Head</div><div class="wc-co">Netbond Technologies</div></div>
+      <div class="wc-yr">Nov 2024 – May 2025</div>
+      <p class="wc-desc">Directed SEO, paid marketing, and multi-brand operations. Led creative shoots and UI/UX planning. Built influencer collaborations and brand campaigns.</p>
+      <div class="tags"><span class="tag">SEO</span><span class="tag">Paid Marketing</span><span class="tag">Creative Direction</span></div>
+    </div>
+    <div class="wc">
+      <div class="wc-acc"></div>
+      <div><div class="wc-role">Digital Marketing Specialist</div><div class="wc-co">Neena Crockeries</div></div>
+      <div class="wc-yr">Mar 2024 – Nov 2024</div>
+      <p class="wc-desc">Managed Shopify website, payment systems, and eCommerce funnel. Ran Meta Ads for 250+ SKUs; handled Amazon &amp; Flipkart listings and ad campaigns.</p>
+      <div class="tags"><span class="tag">eCommerce</span><span class="tag">Shopify</span><span class="tag">Amazon Ads</span><span class="tag">250+ SKUs</span></div>
+    </div>
+    <div class="wc">
+      <div class="wc-acc"></div>
+      <div><div class="wc-role">Team Lead – Digital Marketing</div><div class="wc-co">Masterminds Junior</div></div>
+      <div class="wc-yr">2023 – 2024</div>
+      <p class="wc-desc">Led a full digital marketing team of designers, editors, and ads specialists. Managed 25+ clients across industries, executing paid campaigns and content strategies.</p>
+      <div class="tags"><span class="tag">Team Leadership</span><span class="tag">25+ Clients</span><span class="tag">Performance Campaigns</span></div>
     </div>
   </div>
 </section>
 
-<!-- METRICS BAR -->
-<section class="metrics-section" id="metrics">
-  <div class="metrics-grid reveal">
-    <div class="metric-item" data-label="BKG Feb">
-      <div class="metric-val">1.5M</div>
-      <div class="metric-sub">Facebook Views</div>
-      <div class="metric-growth">↑ 92.3%</div>
+<!-- FIGMA DESIGNS -->
+<section class="sec-design" id="designs">
+  <div class="slbl">UI / UX · Figma</div>
+  <h2>Design &amp; Prototypes</h2>
+  <p class="sdesc">Interactive Figma prototypes — website designs and client report decks designed and delivered via Mediagarh.</p>
+  <div class="ftabs rv">
+    <button class="ftab active" data-idx="0">Junior Toes Website</button>
+    <button class="ftab" data-idx="1">BKG Feb Report Deck</button>
+    <button class="ftab" data-idx="2">Pavna March Report Deck</button>
+  </div>
+  <div class="rv">
+    <div class="figma-wrap" id="fp0">
+      <div class="fi-load" id="fl0"><span class="fi-load-txt">Loading prototype…</span></div>
+      <div class="figma-badge">Junior Toes Preschool · Website Prototype</div>
+      <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fbezouc0Hr9oJ6tSZndg7dq%2FJunior-Toes%3Fnode-id%3D339-1118%26p%3Df%26viewport%3D-732%252C144%252C0.15%26t%3DgqCzQpHCuzrUGz0U-1%26scaling%3Dscale-down-width%26content-scaling%3Dfixed%26starting-point-node-id%3D339%253A1118%26page-id%3D40%253A1887" allowfullscreen onload="document.getElementById('fl0').classList.add('gone')"></iframe>
     </div>
-    <div class="metric-item" data-label="BKG Feb">
-      <div class="metric-val">501K</div>
-      <div class="metric-sub">Instagram Reach</div>
-      <div class="metric-growth">↑ 52.9%</div>
+    <div class="figma-wrap" id="fp1" style="display:none">
+      <div class="fi-load" id="fl1"><span class="fi-load-txt">Loading prototype…</span></div>
+      <div class="figma-badge">BKG Group · February 2026 Report Deck</div>
+      <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FGdMm8RmzVmrZFwzrHCDxRO%2FArtboard-Reports%3Fnode-id%3D7-5192%26viewport%3D535%252C203%252C0.06%26t%3DcoUPpUTAhQ7yyYAu-1%26scaling%3Dscale-down-width%26content-scaling%3Dfixed%26starting-point-node-id%3D7%253A5192%26page-id%3D1%253A3" allowfullscreen onload="document.getElementById('fl1').classList.add('gone')"></iframe>
     </div>
-    <div class="metric-item" data-label="BKG Feb">
-      <div class="metric-val">193K</div>
-      <div class="metric-sub">YouTube Views</div>
-      <div class="metric-growth">↑ 188K more than usual</div>
-    </div>
-    <div class="metric-item" data-label="BKG Feb">
-      <div class="metric-val">7K</div>
-      <div class="metric-sub">Link Clicks (Insta + FB)</div>
-      <div class="metric-growth">↑ 358%</div>
-    </div>
-    <div class="metric-item" data-label="Pavna Mar">
-      <div class="metric-val">15K</div>
-      <div class="metric-sub">Facebook Link Clicks</div>
-      <div class="metric-sub" style="margin-top:0.2rem;font-size:0.7rem;color:rgba(245,240,232,0.3)">Mar + Insta combined</div>
-    </div>
-    <div class="metric-item" data-label="Pavna Mar">
-      <div class="metric-val">435</div>
-      <div class="metric-sub">New Instagram Followers</div>
-      <div class="metric-growth">Mar 2026</div>
+    <div class="figma-wrap" id="fp2" style="display:none">
+      <div class="fi-load" id="fl2"><span class="fi-load-txt">Loading prototype…</span></div>
+      <div class="figma-badge">Pavna School · March 2026 Report Deck</div>
+      <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FGdMm8RmzVmrZFwzrHCDxRO%2FArtboard-Reports%3Fnode-id%3D5-3587%26viewport%3D535%252C203%252C0.06%26t%3DcoUPpUTAhQ7yyYAu-1%26scaling%3Dscale-down-width%26content-scaling%3Dfixed%26starting-point-node-id%3D5%253A3587%26page-id%3D1%253A3" allowfullscreen onload="document.getElementById('fl2').classList.add('gone')"></iframe>
     </div>
   </div>
 </section>
 
-<!-- WORK EXPERIENCE -->
-<section class="work-section" id="work">
-  <div class="section-label">Career</div>
-  <h2 class="section-title">Work Experience</h2>
-  <p class="section-desc">4+ years across multi-brand portfolios, performance marketing, and creative direction.</p>
+<!-- CASE STUDIES -->
+<section class="sec-reports" id="reports">
+  <div class="slbl">Case Studies</div>
+  <h2>Monthly Reports</h2>
+  <p class="sdesc">Real performance numbers from client campaigns prepared and presented by Vikas Chauhan via Mediagarh.</p>
+  <div class="rg rv">
+    <div class="rc">
+      <div class="rc-mo">February 2026 · BKG Group of Institutions</div>
+      <div class="rc-name">BKG Global School &amp; PU College</div>
+      <div class="rm">
+        <div class="rm-item"><div class="rm-val">1.5M</div><div class="rm-key">FB Views ↑92%</div></div>
+        <div class="rm-item"><div class="rm-val">501K</div><div class="rm-key">IG Reach ↑52%</div></div>
+        <div class="rm-item"><div class="rm-val">193K</div><div class="rm-key">YouTube Views</div></div>
+        <div class="rm-item"><div class="rm-val">8.6K</div><div class="rm-key">IG Interactions ↑28%</div></div>
+      </div>
+      <ul class="rdl">
+        <li>10 reels created, 7 published + 5 YouTube videos</li>
+        <li>8 static creatives + Facebook banners designed</li>
+        <li>3.6K Instagram link clicks (↑358%) · 3.4K Facebook (↑279%)</li>
+        <li>5.1K Instagram profile visits ↑69.9%</li>
+        <li>1.5K new Facebook follows · 403 new Instagram follows ↑59.9%</li>
+        <li>Maha Shivratri festival campaign executed</li>
+      </ul>
+    </div>
+    <div class="rc">
+      <div class="rc-mo">March 2026 · Pavna School</div>
+      <div class="rc-name">Pavna International &amp; CBSE School</div>
+      <div class="rm">
+        <div class="rm-item"><div class="rm-val">2M</div><div class="rm-key">IG Reach</div></div>
+        <div class="rm-item"><div class="rm-val">4.7M</div><div class="rm-key">FB Views</div></div>
+        <div class="rm-item"><div class="rm-val">10.8K</div><div class="rm-key">FB Link Clicks</div></div>
+        <div class="rm-item"><div class="rm-val">8.5K</div><div class="rm-key">IG Interactions</div></div>
+      </div>
+      <ul class="rdl">
+        <li>13 reels created, 7 published · 6 meta videos · 4 logo reveals</li>
+        <li>15 static posts designed &amp; published · 4 e-cards</li>
+        <li>3 shoot days — academics, infrastructure, events</li>
+        <li>Trifold + 8Fold brochures · 15+ AI images generated</li>
+        <li>4 website pages completed: Home, Boarding, Franchise, CBSE</li>
+        <li>Social Media Strategy Deck created for Pavna CBSE</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <div class="work-grid reveal">
-
-    <div class="work-card">
-      <div class="work-card-accent"></div>
+<!-- LIVE SITE -->
+<section class="sec-live" id="live">
+  <div class="slbl">Live Work</div>
+  <h2 style="margin-bottom:1.5rem">Live Website</h2>
+  <div class="live-card rv">
+    <div class="live-top">
       <div>
-        <div class="work-role">Social Media Manager</div>
-        <div class="work-company">Mediagarh</div>
+        <div class="live-title">thejwcompany.com <span class="live-pill">● Live</span></div>
+        <div class="live-sub">Operational Head — Digital Marketing, Meta &amp; Google Ads, Website Optimization &amp; Funnel Management</div>
       </div>
-      <div class="work-period">2025 – Present</div>
-      <p class="work-desc">End-to-end social media strategy and execution across 6 brands including Pavna International School, BKG Global School, and Junior Toes Preschool (14 branches). Delivered 2M+ Instagram reach and 4.7M+ Facebook views in March 2026, with 10K+ monthly link clicks driving admissions inquiries.</p>
-      <div class="work-tags">
-        <span class="tag">Multi-Brand</span>
-        <span class="tag">Reels Strategy</span>
-        <span class="tag">Content Production</span>
-        <span class="tag">Shoot Direction</span>
-        <span class="tag">UI/UX Coordination</span>
-      </div>
+      <a href="https://thejwcompany.com" target="_blank" class="live-btn">Open Live Site ↗</a>
     </div>
-
-    <div class="work-card">
-      <div class="work-card-accent"></div>
-      <div>
-        <div class="work-role">Operational Head</div>
-        <div class="work-company">The JW Company</div>
-      </div>
-      <div class="work-period">May 2025 – Present</div>
-      <p class="work-desc">Leading digital marketing operations, performance campaigns, and creative strategy. Managing website optimization, UI/UX improvements, conversion funnel performance, Meta & Google Ads, and influencer collaborations.</p>
-      <div class="work-tags">
-        <span class="tag">Meta Ads</span>
-        <span class="tag">Google Ads</span>
-        <span class="tag">ROAS Optimization</span>
-        <span class="tag">Influencer Marketing</span>
-      </div>
-    </div>
-
-    <div class="work-card">
-      <div class="work-card-accent"></div>
-      <div>
-        <div class="work-role">Operational Head</div>
-        <div class="work-company">Netbond Technologies</div>
-      </div>
-      <div class="work-period">Nov 2024 – May 2025</div>
-      <p class="work-desc">Directed SEO, paid marketing, and multi-brand operations. Led creative shoots, UI/UX planning, and built influencer collaborations and brand campaigns.</p>
-      <div class="work-tags">
-        <span class="tag">SEO</span>
-        <span class="tag">Paid Marketing</span>
-        <span class="tag">Creative Direction</span>
-      </div>
-    </div>
-
-    <div class="work-card">
-      <div class="work-card-accent"></div>
-      <div>
-        <div class="work-role">Digital Marketing Specialist</div>
-        <div class="work-company">Neena Crockeries</div>
-      </div>
-      <div class="work-period">Mar 2024 – Nov 2024</div>
-      <p class="work-desc">Managed Shopify website, payment systems, and eCommerce funnel. Ran Meta Ads for 250+ SKUs; handled Amazon & Flipkart listings and ad campaigns.</p>
-      <div class="work-tags">
-        <span class="tag">eCommerce</span>
-        <span class="tag">Shopify</span>
-        <span class="tag">Amazon Ads</span>
-        <span class="tag">250+ SKUs</span>
-      </div>
-    </div>
-
-    <div class="work-card">
-      <div class="work-card-accent"></div>
-      <div>
-        <div class="work-role">Team Lead</div>
-        <div class="work-company">Masterminds Junior</div>
-      </div>
-      <div class="work-period">2023 – 2024</div>
-      <p class="work-desc">Led a digital marketing team of designers, editors, and ads specialists. Managed 25+ clients across industries, executing paid campaigns and content strategies.</p>
-      <div class="work-tags">
-        <span class="tag">Team Leadership</span>
-        <span class="tag">Client Management</span>
-        <span class="tag">25+ Clients</span>
-      </div>
-    </div>
-
+    <iframe src="https://thejwcompany.com" title="The JW Company" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 </section>
 
-<!-- FIGMA / DESIGN WORK -->
-<section class="design-section" id="designs">
-  <div class="section-label">UI / UX</div>
-  <h2 class="section-title">Design Work</h2>
-  <p class="section-desc">Website pages, landing pages, and brand creatives developed using Figma in collaboration with UI/UX developers.</p>
+<!-- SKILLS -->
+<section class="sec-skills" id="skills">
+  <div class="slbl">Expertise</div>
+  <h2>Skills &amp; Certifications</h2>
+  <div class="skgrid rv">
+    <div class="sk">Social Media Strategy</div><div class="sk">Reels &amp; Video Production</div>
+    <div class="sk">Meta Ads</div><div class="sk">Google Ads</div>
+    <div class="sk">Performance Marketing</div><div class="sk">Creative Direction</div>
+    <div class="sk">Shoot Planning</div><div class="sk">eCommerce · Shopify</div>
+    <div class="sk">SEO &amp; Analytics</div><div class="sk">Google Search Console</div>
+    <div class="sk">Influencer Marketing</div><div class="sk">UI/UX Coordination</div>
+    <div class="sk">Content Calendar Planning</div><div class="sk">Team Leadership</div>
+    <div class="sk">Multi-Brand Management</div><div class="sk">Client Management</div>
+  </div>
+  <div class="certs rv">
+    <div class="cert">🎓 Google Digital Marketing</div>
+    <div class="cert">📘 Meta Social Media Marketing Professional</div>
+    <div class="cert">🟠 HubSpot Certification</div>
+    <div class="cert">🦉 Hootsuite Social Media</div>
+    <div class="cert">🏛 MBA · Digital Marketing — Chandigarh University</div>
+    <div class="cert">🎓 BBA — Kurukshetra University</div>
+  </div>
+</section>
 
-  <div class="design-grid reveal">
-    <div class="design-card dc-1">
-      <div class="design-placeholder">
-        <div class="design-placeholder-icon">🏠</div>
-        <div class="design-placeholder-text">Pavna Home Page</div>
-        <div class="design-placeholder-sub">Figma Design · Developed</div>
-      </div>
-    </div>
-    <div class="design-card dc-2">
-      <div class="design-placeholder">
-        <div class="design-placeholder-icon">🏫</div>
-        <div class="design-placeholder-text">Boarding Page</div>
-        <div class="design-placeholder-sub">Figma Design · Developed</div>
-      </div>
-    </div>
-    <div class="design-card dc-3">
-      <div class="design-placeholder">
-        <div class="design-placeholder-icon">📋</div>
-        <div class="design-placeholder-text">Franchise Page</div>
-        <div class="design-placeholder-sub">Figma Design · Developed</div>
-      </div>
-    </div>
-    <div class="design-card dc-4">
-      <div class="design-placeholder">
-        <div class="design-placeholder-icon">📚</div>
-        <div class="design-placeholder-text">CBSE Page</div>
-        <div class="design-placeholder-sub">Developed Successfully</div>
-      </div>
-    </div>
-    <div class="design-card dc-5">
-      <div class="design-placeholder">
-        <div class="design-placeholder-icon">🤖</div>
-        <div class="design-placeholder-text">AI Landing Page Visuals</div>
-        <div class="design-placeholder-sub">15+ AI Images Generated</div>
-      </div>
-    </div>
-    <div class="design-card dc-6">
-      <div class="design-placeholder">
-        <div class="design-placeholder-icon">🎨</div>
-        <div class="design-placeholder-text">Brand Creatives</div>
-        <div class="design-placeholder-sub">E-Cards · Trifold · 8Fold</div>
-      </div>
+<!-- CONTACT -->
+<section class="sec-contact" id="contact">
+  <div class="cw rv">
+    <div class="slbl" style="justify-content:center">Contact</div>
+    <h2 style="margin-bottom:1rem">Let's Work Together</h2>
+    <p style="color:rgba(242,237,228,.45);font-size:.95rem;line-height:1.8;margin-bottom:2rem">Open to full-time roles, freelance projects, and consulting across digital marketing, social media, and performance campaigns.</p>
+    <a href="mailto:vc13377@gmail.com" class="c-email">vc13377@gmail.com</a>
+    <div class="c-links">
+      <a href="tel:7988424808" class="btn btn-o">📞 7988424808</a>
+      <a href="https://www.linkedin.com/in/vikaschauhanv9" target="_blank" class="btn btn-p">LinkedIn ↗</a>
     </div>
   </div>
 </section>
 
-<!-- FIGMA EMBED PLACEHOLDER -->
-<section class="figma-section">
-  <div style="max-width:900px; margin:0 auto;">
-    <div class="section-label">Figma Prototype</div>
-    <h2 class="section-title" style="margin-bottom:1.5rem;">Live Design Preview</h2>
-
-    <!-- ============================================================
-         REPLACE THIS DIV WITH YOUR FIGMA EMBED IFRAME
-         Example:
-         <iframe
-           src="https://www.figma.com/embed?embed_host=share&url=YOUR_FIGMA_URL"
-           class="figma-frame"
-           allowfullscreen
-         ></iframe>
-         ============================================================ -->
-    <div class="figma-frame reveal">
-      <div class="figma-placeholder">
-        <div class="figma-icon">🖼</div>
-        <div class="figma-placeholder-title">Your Figma Design Goes Here</div>
-        <div class="figma-placeholder-sub">Replace this block with your Figma embed iframe when publishing to GitHub</div>
-      </div>
-    </div>
-    <!-- ============================================================ -->
-
-    <p class="figma-note">← Figma embed placeholder · update src when deploying to GitHub Pages →</p>
-  </div>
-</section>
-
-<!-- CASE STUDIES / REPORTS -->
-<section class="reports-section" id="reports">
-  <div class="section-label">Case Studies</div>
-  <h2 class="section-title">Monthly Reports</h2>
-  <p class="section-desc">Real numbers from client campaigns prepared and presented by Vikas Chauhan via Mediagarh.</p>
-
-  <div class="reports-grid reveal">
-
-    <!-- BKG FEB -->
-    <div class="report-card">
-      <div class="report-card-month">February 2026 · BKG Group of Institutions</div>
-      <div class="report-card-client">BKG Global School<br>&amp; PU College</div>
-      <div class="report-metrics">
-        <div class="report-metric">
-          <div class="report-metric-val">1.5M</div>
-          <div class="report-metric-key">FB Views ↑92%</div>
-        </div>
-        <div class="report-metric">
-          <div class="report-metric-val">501K</div>
-          <div class="report-metric-key">IG Reach ↑52%</div>
-        </div>
-        <div class="report-metric">
-          <div class="report-metric-val">193K</div>
-          <div class="report-metric-key">YouTube Views</div>
-        </div>
-        <div class="report-metric">
-          <div class="report-metric-val">8.6K</div>
-          <div class="report-metric-key">IG Interactions ↑28%</div>
-        </div>
-      </div>
-      <div class="report-deliverables">
-        <div class="report-deliverable">10 reels created, 7 published</div>
-        <div class="report-deliverable">5 YouTube videos posted</div>
-        <div class="report-deliverable">8 static creatives published</div>
-        <div class="report-deliverable">Maha Shivratri festival campaign</div>
-        <div class="report-deliverable">3.6K Instagram link clicks (↑358%)</div>
-      </div>
-    </div>
-
-    <!-- PAVNA MARCH -->
-    <div class="report-card">
-      <div class="report-card-month">March 2026 · Pavna School</div>
-      <div class="report-card-client">Pavna International<br>&amp; CBSE School</div>
-      <div class="report-metrics">
-        <div class="report-metric">
-          <div class="report-metric-val">2M</div>
-          <div class="report-metric-key">Instagram Reach</div>
-        </div>
-        <div class="report-metric">
-          <div class="report-metric-val">4.7M</div>
-          <div class="report-metric-key">Facebook Views</div>
-        </div>
-        <div class="report-metric">
-          <div class="report-metric-val">10.8K</div>
-          <div class="report-metric-key">FB Link Clicks</div>
-        </div>
-        <div class="report-metric">
-          <div class="report-metric-val">8.5K</div>
-          <div class="report-metric-key">IG Interactions</div>
-        </div>
-      </div>
-      <div class="report-deliverables">
-        <div class="report-deliverable">13 reels created, 7 published</div>
-        <div class="report-deliverable">15 static posts designed &amp; published</div>
-        <div class="report-deliverable">3 shoot days — academics, infra, events</div>
-        <div class="report-deliverable">4 e-cards + trifold + 8fold brochures</div>
-        <div class="report-deliverable">4 website pages completed (Figma → Dev)</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SKILLS + CERTS -->
-<section class="skills-section" id="skills">
-  <div class="section-label">Expertise</div>
-  <h2 class="section-title">Skills &amp; Certifications</h2>
-
-  <div class="skills-grid reveal">
-    <div class="skill-pill"><div class="skill-pill-name">Social Media Strategy</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Reels &amp; Video Production</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Meta Ads</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Google Ads</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Performance Marketing</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Creative Direction</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Shoot Planning</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">eCommerce — Shopify</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">SEO &amp; Analytics</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Google Search Console</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Influencer Marketing</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">UI/UX Coordination</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Content Calendar Planning</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Team Leadership</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Multi-Brand Management</div></div>
-    <div class="skill-pill"><div class="skill-pill-name">Client Management</div></div>
-  </div>
-
-  <div class="cert-row reveal">
-    <div class="cert-badge"><span class="cert-icon">🎓</span> Google Digital Marketing</div>
-    <div class="cert-badge"><span class="cert-icon">📘</span> Meta Social Media Marketing</div>
-    <div class="cert-badge"><span class="cert-icon">🟠</span> HubSpot Certification</div>
-    <div class="cert-badge"><span class="cert-icon">🦉</span> Hootsuite Social Media</div>
-    <div class="cert-badge"><span class="cert-icon">🎓</span> MBA — Digital Marketing</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-name">Vikas <span>Chauhan</span></div>
-  <ul class="footer-links">
+  <div class="flogo">Vikas <span>Chauhan</span></div>
+  <ul>
     <li><a href="mailto:vc13377@gmail.com">Email</a></li>
     <li><a href="https://www.linkedin.com/in/vikaschauhanv9" target="_blank">LinkedIn</a></li>
-    <li><a href="tel:7988424808">7988424808</a></li>
+    <li><a href="https://thejwcompany.com" target="_blank">JW Company</a></li>
   </ul>
-  <div class="footer-copy">Jaipur, Rajasthan · © 2026</div>
+  <div class="fcopy">Jaipur, Rajasthan · 2026</div>
 </footer>
 
 <script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const dot = cursor.querySelector('.cursor-dot');
-  const ring = cursor.querySelector('.cursor-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
+// Cursor
+const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function a(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top = my + 'px';
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('on');
+      [...e.target.children].forEach((c,i)=>c.style.transitionDelay=(i*.07)+'s');
+    }
   });
+},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-  function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animRing);
-  }
-  animRing();
+// Figma tabs
+document.querySelectorAll('.ftab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const idx=tab.dataset.idx;
+    document.querySelectorAll('[id^="fp"]').forEach(p=>p.style.display='none');
+    const panel=document.getElementById('fp'+idx);
+    panel.style.display='block';
+    // trigger iframe load if not loaded yet
+    const iframe=panel.querySelector('iframe');
+    if(iframe && !iframe.dataset.loaded){
+      iframe.dataset.loaded='1';
+    }
+  });
+});
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        // stagger children
-        const children = e.target.children;
-        Array.from(children).forEach((child, i) => {
-          child.style.transitionDelay = (i * 0.07) + 's';
-        });
-      }
+// Counter animation
+const mgEl=document.getElementById('mg');
+let counted=false;
+new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting&&!counted){
+    counted=true;
+    const data=[
+      {id:'mv0',end:1.5,sfx:'M',dec:1},{id:'mv1',end:501,sfx:'K',dec:0},
+      {id:'mv2',end:193,sfx:'K',dec:0},{id:'mv3',end:4.7,sfx:'M',dec:1},
+      {id:'mv4',end:10.8,sfx:'K',dec:1},{id:'mv5',end:25,sfx:'+',dec:0}
+    ];
+    data.forEach(({id,end,sfx,dec})=>{
+      const node=document.getElementById(id);
+      const dur=1800,s=performance.now();
+      (function anim(now){
+        const p=Math.min((now-s)/dur,1),ease=1-Math.pow(1-p,3);
+        node.textContent=(ease*end).toFixed(dec)+sfx;
+        if(p<1) requestAnimationFrame(anim);
+      })(s);
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
-
-  // Counter animation for stats
-  function animCount(el, target, suffix) {
-    let start = 0;
-    const dur = 1800;
-    const step = ts => {
-      if (!start) start = ts;
-      const prog = Math.min((ts - start) / dur, 1);
-      const val = Math.floor(prog * target);
-      el.textContent = val + suffix;
-      if (prog < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
   }
-
-  const metricsObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const vals = e.target.querySelectorAll('.metric-val');
-        const data = [
-          [1.5, 'M'], [501, 'K'], [193, 'K'], [7, 'K'], [15, 'K'], [435, '']
-        ];
-        vals.forEach((v, i) => {
-          if (data[i]) {
-            const [n, s] = data[i];
-            let count = 0;
-            const dur = 1600;
-            const start = performance.now();
-            const anim = ts => {
-              const prog = Math.min((ts - start) / dur, 1);
-              const ease = 1 - Math.pow(1 - prog, 3);
-              const val = (ease * n).toFixed(n < 10 ? 1 : 0);
-              v.textContent = val + s;
-              if (prog < 1) requestAnimationFrame(anim);
-            };
-            requestAnimationFrame(anim);
-          }
-        });
-        metricsObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-  const metricsGrid = document.querySelector('.metrics-grid');
-  if (metricsGrid) metricsObserver.observe(metricsGrid);
+},{threshold:.2}).observe(mgEl);
 </script>
 </body>
 </html>
